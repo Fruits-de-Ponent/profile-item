@@ -260,3 +260,12 @@ h1, h2, h3, h4, h5, h6, p {
   width: 100%;
   text-transform: uppercase;
 }
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}

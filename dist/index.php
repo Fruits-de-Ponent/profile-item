@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -13,7 +17,7 @@
    
   <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 <!-- <link rel='stylesheet' href='https://file.myfontastic.com/mSPBF5EPQMnzzDFUMeyech/icons.css'> -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'><link rel="stylesheet" href="./style.css?1.0">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
@@ -23,8 +27,10 @@
 </div>
 <div class="profile-background">
   <div class="profile-container">
-    <div class="profile-wrapper"><img class="profile-circle" src="https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?itok=tpvHWpeZ"/>
-      <div class="profile-divider"></div>
+    <div class="profile-wrapper"><img class="profile-circle" src="data:image/jpg;base64,<?php echo base64_encode($_SESSION['img']);  ?> "/>
+     
+    <div class="profile-divider"></div>
+   
       <div class="profile-info">
         <h3 >Jorge </h3><small>Infantes Sorolla</small>
        
@@ -35,8 +41,12 @@
           <p>Soy un estudiante en practicas, me encuentro en el departamento de informatica y trabajo en el desarrollo de aplicaciones web. </p>
         </div>
       </div>
-    </div><a class="add-photo-cc" href="#"><i class="material-icons">add_a_photo</i>
-      <div class="add-photo-tooltip">Cambiar foto de portada</div></a>
+    </div>
+    <!-- <a class="add-photo-cc" href="imagen.php"><i class="material-icons">add_a_photo</i> -->
+    <label for="">Cambiar foto</label>
+    <small>    <input type="file" name="img"  >
+</small>
+      <!-- <div class="add-photo-tooltip">Cambiar foto de portada</div></a> -->
   </div>
 </div>
 <div class="separator-content">
@@ -45,7 +55,7 @@
     <div class="col s4"><span class="chico">Correo</span>
       <p style="text-transform: lowercase;">
       <?php 
-      session_start();
+      
       echo $_SESSION['email'];  ?></p>
     </div>
     <div class="col s4"><span class="chico">Departamento</span>
