@@ -269,3 +269,18 @@ h1, h2, h3, h4, h5, h6, p {
 	position: absolute;
 	z-index: -1;
 }
+
+input.newbutton {
+  display:block;
+  width:200px;/*match image width;*/
+  height: 200px;;/* match image height */
+  line-height:50px;/* match height*/
+  background:url('./imagenes/camara.png');
+  color:#000;
+  border:none;
+  padding:0;
+  text-transform:capitalize;/* ie6 fix to hide text*/
+  text-indent:-999em;/* hide text - remove this if you want the text in the value attribute to show.*/
+  clear:both;/* ie6 fix*/
+  
+}

@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 ?>
 
@@ -8,7 +9,8 @@ session_start();
   <meta charset="UTF-8">
   <title>Perfil</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
 
@@ -28,24 +30,35 @@ session_start();
 <div class="profile-background">
   <div class="profile-container">
     <div class="profile-wrapper"><img class="profile-circle" src="data:image/jpg;base64,<?php echo base64_encode($_SESSION['img']);  ?> "/>
-     
+   
     <div class="profile-divider"></div>
    
       <div class="profile-info">
-        <h3 >Jorge </h3><small>Infantes Sorolla</small>
+
+        <h3 ><?php echo $_SESSION["nombre"]; ?></h3><small><?php echo $_SESSION["apellido"]; ?></small>
        
       </div>
+     
+
+       <form method="POST" class="form-inline" action="guardarImg.php" enctype="multipart/form-data">
+  <div class="mb-2" style="width: 260px;margin-top:10px; margin-left:15px;">
+  <input style="float: left; width: 250px;" class="form-control " type="file"name="img" required >
+</div>
+
+   <input style="color: black;" class="" type="submit"  name="action" value="Actualizar"  />
+   
+  </form>
+
       <div class="profile-extras">
-        <div class="stars"> <span> <i class="material-icons">star star star star star</i></span></div>
+     
         <div class="description">
-          <p>Soy un estudiante en practicas, me encuentro en el departamento de informatica y trabajo en el desarrollo de aplicaciones web. </p>
+          <p>Bienvenido</p>
         </div>
       </div>
     </div>
     <!-- <a class="add-photo-cc" href="imagen.php"><i class="material-icons">add_a_photo</i> -->
-    <label for="">Cambiar foto</label>
-    <small>    <input type="file" name="img"  >
-</small>
+    
+
       <!-- <div class="add-photo-tooltip">Cambiar foto de portada</div></a> -->
   </div>
 </div>
@@ -73,32 +86,18 @@ session_start();
     </div>
   </div>
 </div>
-<div class="center"><a href="#"><i class="icon-facebook mediano"></i></a><a href="#"><i class="icon-twitter mediano"></i></a><a href="#"><i class="icon-google mediano"></i></a></div>
-<hr class="divider"/>
-<div class="center sponsor-user">
-  <div class="row">
-    <div class="col s6">
-      <p>Patrocinado por</p>
-    </div>
-    <div class="col s6"><img class="left" src="https://1000marcas.net/wp-content/uploads/2020/01/Lamborghini-Logo.png"/></div>
-  </div>
-</div>
-<hr class="divider"/>
-<div class="center sponsor-user">
-  <div class="row">
-    <div class="col s6">
-      <p> <span>Ganancias: </span>$1,000,000</p>
-    </div>
-    <div class="col s6">
-      <p><span>Ranking: </span>1,500</p>
-    </div>
-  </div>
-</div>
-<hr class="divider"/>
+
+
+
+<?php
+
+?>
 <div class="center">
   <div class="med"></div><a href="../../vacaciones/Mostrarvacaciones.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">VACACIONES</a>
+  <hr class="divider"/>
   <div class="med"></div>
   <a href="#" class="grey darken-3 waves-effect waves-light btn round-cc white-text">EPIS</a>
+  <hr class="divider"/>
   <div class="med"></div>
   <button type="button"class="grey darken-3 waves-effect waves-light btn round-cc white-text" data-toggle="modal" data-target="#exampleModal" sty> 
     Cerrar sesion
