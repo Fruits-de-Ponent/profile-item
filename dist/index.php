@@ -96,7 +96,7 @@ session_start();
   <div class="med"></div><a href="../../vacaciones/Mostrarvacaciones.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">VACACIONES</a>
   <hr class="divider"/>
   <div class="med"></div>
-  <a href="#" class="grey darken-3 waves-effect waves-light btn round-cc white-text">EPIS</a>
+  <a href="../../formacion/index.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">FORMACION</a>
   <hr class="divider"/>
   <div class="med"></div>
   <button type="button"class="grey darken-3 waves-effect waves-light btn round-cc white-text" data-toggle="modal" data-target="#exampleModal" sty> 
