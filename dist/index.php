@@ -95,9 +95,16 @@ session_start();
 <div class="center">
   <div class="med"></div><a href="../../vacaciones/Mostrarvacaciones.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">VACACIONES</a>
   <hr class="divider"/>
+  <?php 
+ 
+  if($_SESSION["Trabajador"]=='48251235H' ||$_SESSION["Trabajador"]=='43718221M' ){
+  ?>
   <div class="med"></div>
   <a href="../../formacion/index.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">FORMACION</a>
   <hr class="divider"/>
+  <?php 
+  }
+  ?>
   <div class="med"></div>
   <button type="button"class="grey darken-3 waves-effect waves-light btn round-cc white-text" data-toggle="modal" data-target="#exampleModal" sty> 
     Cerrar sesion
