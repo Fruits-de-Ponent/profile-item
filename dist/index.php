@@ -96,7 +96,7 @@ session_start();
   <hr class="divider"/>
   <?php 
  
-  if($_SESSION["Trabajador"]=='48251235H' ||$_SESSION["Trabajador"]=='43718221M' ){
+  if($_SESSION["Trabajador"]=='48251235H' ||$_SESSION["Trabajador"]=='43718221M'||$_SESSION["Trabajador"]=='47683324T'||$_SESSION["Trabajador"]=='25452518M' ){
   ?>
   <div class="med"></div>
   <a href="../../formacion/index.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">FORMACION</a>
