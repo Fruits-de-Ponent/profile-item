@@ -8,14 +8,15 @@ function password(){
         showCancelButton: true,
         focusConfirm: false,
         preConfirm: () => {
+          // Solicitamos dos veces la contraseña 
           const password = Swal.getPopup().querySelector('#password').value
           const confirmPassword = Swal.getPopup().querySelector('#confirmPassword').value
           if (!password || !confirmPassword) {
             Swal.showValidationMessage(`Completa los campos`)
-          }
+          }   // En el caso de ue las contraseñas no cincidan mostrara este mensaje de error
           else if (password!= confirmPassword){
             Swal.showValidationMessage(`Las contraseñas no coinciden`)
-          }
+          }// si es correcto redireccionamos la pagina al archivo updatepass.php
           else{
             $.ajax({
             type: 'post',

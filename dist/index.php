@@ -85,25 +85,28 @@ session_start();
     </div>
   </div>
 </div>
-
-
-
 <?php
-
 ?>
 <div class="center">
   <div class="med"></div><a href="../../vacaciones/Mostrarvacaciones.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">VACACIONES</a>
   <hr class="divider"/>
   <?php 
- 
+//  Si el tranajador es de rrhh o jorge podra acceder a nuevos apartados como formaciones
   if($_SESSION["Trabajador"]=='48251235H' ||$_SESSION["Trabajador"]=='43718221M'||$_SESSION["Trabajador"]=='47683324T'||$_SESSION["Trabajador"]=='25452518M' ){
   ?>
   <div class="med"></div>
   <a href="../../formacion/index.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">FORMACION</a>
   <hr class="divider"/>
+  <div class="med"></div>
+  <a href="../../vacaciones/alta_trabajador.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">ALTA TRABAJADOR</a>
+  <hr class="divider"/>
+  <div class="med"></div>
+  <a href="../../formacion/listado_trabajadores.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">BAJA TRABAJADOR</a>
+  <hr class="divider"/>
   <?php 
   }
   ?>
+  <!-- al pulsar este boton se ejecuta un script con un pop up donde introduces la contraseña -->
   <div class="med"></div>
   <button type="button"class="grey darken-3 waves-effect waves-light btn round-cc white-text" onclick="password()" > 
     Cambiar Contraseña
