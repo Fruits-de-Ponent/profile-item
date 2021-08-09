@@ -98,6 +98,9 @@ session_start();
   <a href="../../formacion/index.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">FORMACION</a>
   <hr class="divider"/>
   <div class="med"></div>
+  <a href="./cargarTrabajadores.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">ACTUALIZAR TRABAJADORES</a>
+  <hr class="divider"/>
+  <div class="med"></div>
   <a href="../../vacaciones/alta_trabajador.php" class="grey darken-3 waves-effect waves-light btn round-cc white-text">ALTA TRABAJADOR</a>
   <hr class="divider"/>
   <div class="med"></div>
@@ -106,7 +109,7 @@ session_start();
   <?php 
   }
   ?>
-  <!-- al pulsar este boton se ejecuta un script con un pop up donde introduces la contraseña -->
+  <!-- al pulsar este boton se ejecuta un script con un pop up donde introduces la contraseña   -->
   <div class="med"></div>
   <button type="button"class="grey darken-3 waves-effect waves-light btn round-cc white-text" onclick="password()" > 
     Cambiar Contraseña
