@@ -1,20 +1,12 @@
 <?php
-
-  
-
+error_reporting(0);
+    require_once 'database.php';
+// le damos el valor a la variable de una consulta para enviarla a la funcion
 $sql  = "SELECT * FROM FDP_INFO_EMPLEADOS WHERE ACTIVO='Y' AND CODIGO_EMPRESA<=5";
+// ejecutamos las dos funciones
+ReadData($sql,$con);
+Desactivar($con);
 
-ReadData($sql);
-
-function ConnectionLogin(){
-    $servidor="localhost";
-    $usuario="root";
-    $contraseña="ponent";
-    $bd="gestor_vacacional";
-    //con esto podemos printar los dias trabajados exrtraidos de una funcion.       
-    //realizamos la conexión
-    $con=mysqli_connect($servidor,$usuario,$contraseña,$bd);
-}
 function OpenConnection()  
 {  
     try  
@@ -31,16 +23,13 @@ function OpenConnection()
     }  
 }  
 //Esta función genera ejecuta una consulta cualquiera
-    function ReadData($tsql)  
-{ 
-    require_once 'database.php';
+function ReadData($tsql,$con)  { 
     try  
     {  
+        // pasamos a una variable la conexion con SAP
         $conn = OpenConnection();  
         $tsql ;  
         $getNames = sqlsrv_query($conn, $tsql);  
-        /*if ($getNames == FALSE)  
-            die(FormatErrors(sqlsrv_errors()));  */
         $productCount = 0; 
         ?>
         <table class="table table-bordered table-hover">
@@ -73,10 +62,9 @@ function OpenConnection()
                 $qry2;
                 $qry2="INSERT INTO `login`(`Nombre`, `Apellido`, `DNI`,`Password`, `Empresa`) VALUES ('$nombre','$apellido','$DNI','1234','$empresa')";
                 if (mysqli_query($con, $qry2)) {
-                    echo 'Inseeeert!!!';
+                    echo 'Actualizado!';
                 }else {
                     echo 'errorr!!!';
-                
                 }
             }
             ?>
@@ -92,8 +80,8 @@ function OpenConnection()
             <?php
             $productCount++;  
         }  
-        sqlsrv_free_stmt($getNames);  
-        sqlsrv_close($conn); 
+        // sqlsrv_free_stmt($getNames);  
+        // sqlsrv_close($conn); 
 
     }  
     catch(Exception $e)  
@@ -101,7 +89,44 @@ function OpenConnection()
         echo("Error!");  
     }  
 } 
+function Desactivar($con){
+    
+    try  
+    { 
+    $conn = OpenConnection(); 
+    $sql2="SELECT * FROM login WHERE eliminado=0";
+    $result = mysqli_query($con, $sql2);
+    while ($mostrar = mysqli_fetch_array($result)) {
+        $dni   =  $mostrar['DNI'];
+        $getNames = sqlsrv_query($conn, "SELECT COUNT(NIF) FROM FDP_INFO_EMPLEADOS WHERE NIF='$dni' AND ACTIVO='Y'");  
+        $productCount = 0; 
+        while($row = sqlsrv_fetch_array($getNames, SQLSRV_FETCH_ASSOC))  
+        {  
+            $registro= $row['COUNT(NIF)']; 
+            if($registro >=1){
+                $qry2;
+                $qry2="UPDATE `login` SET `eliminado`='1' WHERE DNI='$dni'";
+                if (mysqli_query($con, $qry2)) {
+                    echo 'Actualizado';
+                }else {
+                    echo 'errorr!!!';
+                }
+              
+            }else{
+                 
+            }
+            $productCount++;  
+        }
+    }
+    sqlsrv_close($conn); 
 
+    }  
+    catch(Exception $e)  
+    {  
+        echo("Error!");  
+    } 
+
+}
 
 
 ?>
