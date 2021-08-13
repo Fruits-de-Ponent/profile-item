@@ -50,7 +50,6 @@ if ($result) {
         <?php
 	}
     else{
-
         echo "algo esta mal";
     }
 ?>
