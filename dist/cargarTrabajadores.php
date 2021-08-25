@@ -6,19 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formacion reglada</title>
     <!-- html necesario para usar sweetalert -->
-  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     
 </head>
 </html>
 <?php
-error_reporting(0);
+// error_reporting(0);
 require_once 'database.php';
 // le damos el valor a la variable de una consulta para enviarla a la funcion
 $sql  = "SELECT * FROM FDP_INFO_EMPLEADOS WHERE ACTIVO='Y' AND CODIGO_EMPRESA<=5";
 // ejecutamos las dos funciones
+
 ReadData($sql,$con);
+
+
 Desactivar($con);
+
+
 // Creamos la funcion donde generamos la conexion con la base de datos de SAP
 function OpenConnection()  
 {  
@@ -40,10 +46,10 @@ function OpenConnection()
 //Esta función recoge los valores de las otras y ejecuta las consultas.
 function ReadData($tsql,$con)  { 
     try  
-    {  
+    {   
         // pasamos a una variable la conexion con SAP
         $conn = OpenConnection();  
-        $tsql ;  
+
         // ejecutamos la conexion y la sentencia sql  
         $getNames = sqlsrv_query($conn, $tsql);  
         // Recoreremos toda la tabla con este bucle
@@ -69,7 +75,7 @@ function ReadData($tsql,$con)  {
                 $qry2="INSERT INTO `login`(`Nombre`, `Apellido`, `DNI`,`Password`, `Empresa`) VALUES ('$nombre','$apellido','$DNI','1234','$empresa')";
                 if (mysqli_query($con, $qry2)) {
                     // Si la sentencia es correcta mostrara este mensaje
-                    
+                    update();
                 }else {
                     echo 'errorr!!!';
                 }
@@ -92,38 +98,24 @@ function Desactivar($con){
         $result = mysqli_query($con, $sql2);
         while ($mostrar = mysqli_fetch_array($result)) {
             $dni   =  $mostrar['DNI'];
+            $apellido   =  $mostrar['Apellido'];
+            echo '<br>'.$apellido.' '.$dni.' - ' ;
             // Cogemos los dnis activos de la tabla login y comprobamos que tambien lo esten en latabla sap
-            $getNames = sqlsrv_query($conn, "SELECT NIF FROM FDP_INFO_EMPLEADOS WHERE NIF='$dni' AND ACTIVO='Y' ");//  
+            $getNames = sqlsrv_query($conn, "SELECT ACTIVO FROM FDP_INFO_EMPLEADOS WHERE NIF='$dni' ");//  
             while($row = sqlsrv_fetch_array($getNames, SQLSRV_FETCH_ASSOC))  
             {  
                 // si el Registro es nulo es porque se encuentra ese dni activo por lo tanto estara inactivo
-                $registro= $row['NIF']; 
-                if(!$registro){
+                echo $registro= $row['ACTIVO']; 
+                
+                if($registro=='N'){
+                    echo 'Dni del trabajador inactivo'.$dni.' - '.$registro; 
                     // Actualizamos al trabajador de la tbla login introduciendo un 1 en la columna eliminado
                     $qry2="UPDATE `login` SET `eliminado`='1' WHERE DNI='$dni'";
                     if (mysqli_query($con, $qry2)) {
-                        ?>
-                        <!-- Si los estudios se actualizan mostrara este mensaje de confirmacion -->
-                        <script> swal.fire({
-                        icon: 'success',
-                        title: 'Trabajadores actualizados!',
-                        type: 'succes',
-                        }).then(function() {
-                        window.location = "index.php"; 
-                        });</script>
-                        <?php
+                        update();
                     }
                 }else{
-                        ?>
-                    <!-- Si los estudios se actualizan mostrara este mensaje de confirmacion -->
-                        <script> swal.fire({
-                        icon: 'success',
-                        title: 'Trabajadores actualizados!',
-                        type: 'succes',
-                        }).then(function() {
-                        window.location = "index.php"; 
-                        });</script>
-                        <?php   
+                    update();
                 }
             }
         }
@@ -135,6 +127,16 @@ function Desactivar($con){
     {  
         echo("Error!");  
     } 
+}
+function update(){
+    ?>
+        <script> swal.fire({
+            icon: 'success',
+            title: 'Trabajadores actualizados!',
+            type: 'succes',
+        }).then(function() {
+            window.location = "index.php"; 
+        });</script><?php
 }
 ?>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
