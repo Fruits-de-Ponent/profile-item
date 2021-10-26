@@ -13,23 +13,17 @@
 </head>
 </html>
 <?php
-// error_reporting(0);
 require_once 'database.php';
 // le damos el valor a la variable de una consulta para enviarla a la funcion
 $sql  = "SELECT * FROM FDP_INFO_EMPLEADOS WHERE ACTIVO='Y' AND CODIGO_EMPRESA<=5";
 // ejecutamos las dos funciones
 
 ReadData($sql,$con);
-
-
 Desactivar($con);
 
-
 // Creamos la funcion donde generamos la conexion con la base de datos de SAP
-function OpenConnection()  
-{  
-    try  
-    {  
+function OpenConnection() {  
+    try {  
         // asignamos los valores de el servidor, base de datos, usuario y contraseña
         $serverName = "SERVERSAP"; 
         $connectionOptions = array("Database"=>"FRUITSDEPONENT",  
@@ -38,23 +32,20 @@ function OpenConnection()
         $conn = sqlsrv_connect($serverName, $connectionOptions);  
         return $conn;
     }  
-    catch(Exception $e)  
-    {  
+    catch(Exception $e) {  
         echo("Error!");  
     }  
 }  
 //Esta función recoge los valores de las otras y ejecuta las consultas.
 function ReadData($tsql,$con)  { 
-    try  
-    {   
+    try {   
         // pasamos a una variable la conexion con SAP
         $conn = OpenConnection();  
 
         // ejecutamos la conexion y la sentencia sql  
         $getNames = sqlsrv_query($conn, $tsql);  
         // Recoreremos toda la tabla con este bucle
-        while($row = sqlsrv_fetch_array($getNames, SQLSRV_FETCH_ASSOC))  
-        {  
+        while($row = sqlsrv_fetch_array($getNames, SQLSRV_FETCH_ASSOC)) {  
             // Recogemos en variables la consulta en sql
             $dni=$row['NIF'];
             $nombre=$row['NOMBRE'];
@@ -84,8 +75,7 @@ function ReadData($tsql,$con)  {
         // Cerramos la conexion
          sqlsrv_close($conn); 
     }  
-    catch(Exception $e)  
-    {  
+    catch(Exception $e) {  
         echo("Error!");  
     }  
 } 
@@ -102,8 +92,7 @@ function Desactivar($con){
             echo '<br>'.$apellido.' '.$dni.' - ' ;
             // Cogemos los dnis activos de la tabla login y comprobamos que tambien lo esten en latabla sap
             $getNames = sqlsrv_query($conn, "SELECT ACTIVO FROM FDP_INFO_EMPLEADOS WHERE NIF='$dni' ");//  
-            while($row = sqlsrv_fetch_array($getNames, SQLSRV_FETCH_ASSOC))  
-            {  
+            while($row = sqlsrv_fetch_array($getNames, SQLSRV_FETCH_ASSOC)) {  
                 // si el Registro es nulo es porque se encuentra ese dni activo por lo tanto estara inactivo
                 echo $registro= $row['ACTIVO']; 
                 
@@ -121,10 +110,8 @@ function Desactivar($con){
         }
         //Cerramos la conexion
         sqlsrv_close($conn); 
-
     }  
-    catch(Exception $e)  
-    {  
+    catch(Exception $e) {  
         echo("Error!");  
     } 
 }
