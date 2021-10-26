@@ -1,6 +1,6 @@
 <?php
-error_reporting(0);
-session_start();
+  error_reporting(0);
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ session_start();
       <div class="profile-wrapper"><img class="profile-circle" src="data:image/jpg;base64,<?php echo base64_encode($_SESSION['img']);  ?> "/>
         <div class="profile-divider"></div>
         <div class="profile-info">
-        <h3 ><?php echo $_SESSION["nombre"]; ?></h3><small><?php echo $_SESSION["apellido"]; ?></small>
+        <h3><?php echo $_SESSION["nombre"]; ?></h3><small><?php echo $_SESSION["apellido"]; ?></small>
         </div>
         <form method="POST" class="form-inline" action="guardarImg.php" enctype="multipart/form-data">
           <div class="mb-2" style="width: 260px;margin-top:10px; margin-left:15px;">
