@@ -14,15 +14,12 @@
 </head>
 <body>
 
-    <nav class="navbar color text-light sticky-top" id="navegador">
+    <nav class="navbar color text-light sticky-top border-bottom border-light shadow-sm" id="navegador">
         <div class="container-fluid">
             <div>
                 <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">
                     <?php generarIconPerfil(); ?>
                 </a>
-            </div>
-            <div class="mt-2">
-                <img src="./imagenes/logo-200.png" alt="logo fruitsponent" width="50" class="img-fluid mx-auto mb-3 esconder">
             </div>
             <div>
                 <a type="button">
@@ -31,15 +28,100 @@
             </div>
         </div>
     </nav>
-    
-    <div class="container-fluid color text-light">
-        <div class="row py-2 justify-content-center text-center">
-            <div class="col">A</div>
-            <div class="col">S</div>
-            <div class="col">D</div>
+
+    <div class="container-fluid mt-3">
+        <h5 class="mx-1 text-color">PANEL DE CONTROL</h5>
+        <div class="row">
+            <div class="col d-grid gap-2 mx-1">
+                <button class="btn btn-color shadow" type="button" data-bs-toggle="collapse" data-bs-target="#colapsar-datos" aria-expanded="true" aria-controls="colapsar-datos">DATOS</button>
+            </div>
+            <div class="col d-grid gap-2 mx-1">
+                <button class="btn btn-color shadow" type="button" data-bs-toggle="collapse" data-bs-target="#colapsar-app" aria-expanded="false" aria-controls="colapsar-app">APP's</button>
+            </div>
+            <div class="col d-grid gap-2 mx-1">
+                <button class="btn btn-color shadow" type="button" data-bs-toggle="collapse" data-bs-target="#colapsar-config" aria-expanded="false" aria-controls="colapsar-config">CONFIGURACIÓN</button>
+            </div>
         </div>
     </div>
 
+    <div class="collapse" id="colapsar-datos">
+        <div class="container-fluid mt-3">
+            <h5 class="mx-1 text-color">DATOS</h5>
+            <div class="row mx-1 rounded color text-light py-2 pt-3 justify-content-center text-center shadow">
+                <div class="col border-end border-light">
+                    <h5><b>Usuario</b></h5>
+                    <h5><?php echo $_SESSION["nombre"].' '.$_SESSION["apellido"];?></h5>
+                </div>
+                <div class="col border-start border-end border-light">
+                    <h5><b>Correo</b></h5>
+                    <h5><?php echo $_SESSION['email'];?></h5>
+                </div>
+                <div class="col border-start border-end border-light">
+                    <h5><b>Departamento</b></h5>
+                    <h5><?php echo $_SESSION['departamento'];?></h5>
+                </div>
+                <div class="col border-start border-light">
+                    <h5><b>Responsable</b></h5>
+                    <h5><?php echo $_SESSION['responsable'];?></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="collapse" id="colapsar-app">
+        <div class="container-fluid mt-3">
+            <h5 class="mx-1 text-color">APP's</h5>
+            <div class="row">
+                <div class="col d-grid gap-2">
+                    <button class="btn btn-color shadow">VACACIONES</button>
+                </div>
+                <div class="col d-grid gap-2">
+                    <button class="btn btn-color shadow">FORMACIONES</button>
+                </div>
+                <div class="col d-grid gap-2">
+                    <button class="btn btn-color shadow">ALTA TRABAJADOR</button>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col d-grid gap-2">
+                    <button class="btn btn-color shadow">CALENDARIO</button>
+                </div>
+                <div class="col d-grid gap-2">
+                    <button class="btn btn-color shadow">HORAS</button>
+                </div>
+                <div class="col d-grid gap-2">
+                    <button class="btn btn-color shadow">PAGINA PRINCIPAL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="collapse" id="colapsar-config">
+        <div class="container-fluid mt-3">
+            <h5 class="mx-1 text-color">CONFIGURACION</h5>
+            <div class="row">
+                <div class="col d-grid gap-2">
+                    <h6 class="mx-1 text-color">Cambiar contraseña</h6>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Introduce la nueva contraseña">
+                    </div>
+                    <div class="input-group mt-1 mb-2">
+                        <input type="text" class="form-control" placeholder="Vuelve a introducir la nueva contraseña">
+                        <button class="btn btn-color" type="button" id="button-addon2">Cambiar contraseña</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col d-grid gap-2">
+                    <h6 class="mx-1 text-color">Cambiar imagen del perfil</h6>
+                    <div class="input-group">
+                        <input type="file" class="form-control" id="inputGroupFile02">
+                        <label class="input-group-text btn-color" for="inputGroupFile02">Cambiar imagen</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
