@@ -10,7 +10,27 @@
 }
 
 .color {
-    background-color: var(--col);
+    background-color: var(--col) !important;
+}
+
+.border-color {
+    border-color: var(--col) !important;
+}
+
+.btn-color {
+    background-color: var(--col) !important;
+    border: 1px solid transparent;
+    color: var(--bs-light) !important;
+}
+
+.btn-color:hover {
+    background-color: var(--bs-light) !important;
+    border: 1px solid var(--col);
+    color: var(--col) !important;
+}
+
+.text-color {
+    color: var(--col) !important;
 }
 
 #img-fondo {
