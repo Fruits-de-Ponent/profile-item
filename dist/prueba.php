@@ -101,13 +101,13 @@
     <div class="collapse" id="colapsar-app">
         <div class="container-fluid mt-3">
             <hr>
-            <h5 class="mx-1 text-color"><b><?php generarIconCaja(); ?>APP's</b></h5>
+            <h5 class="mx-1 text-color"><b><?php generarIconCaja();?>APP's</b></h5>
             <div class="row">
                 <div class="col d-grid">
-                    <button class="btn btn-color shadow"><?php generarIconVacaciones(); ?>VACACIONES</button>
+                    <button class="btn btn-color shadow"><?php generarIconVacaciones();?>VACACIONES</button>
                 </div>
                 <div class="col d-grid">
-                    <button class="btn btn-color shadow"><?php generarIconFormaciones(); ?>FORMACIONES</button>
+                    <button class="btn btn-color shadow"><?php generarIconFormaciones();?>FORMACIONES</button>
                 </div>
                 <div class="col d-grid">
                     <button class="btn btn-color shadow">GRÁFICO RENDIMIENTO</button>
@@ -125,9 +125,9 @@
     <div class="collapse" id="colapsar-config">
         <div class="container-fluid mt-3">
             <hr>
-            <h5 class="text-color"><b><?php generarIconLlave(); ?>CONFIGURACIÓN</b></h5>
+            <h5 class="text-color"><b><?php generarIconLlave();?>CONFIGURACIÓN</b></h5>
             <div class="row">
-                <h6 class="text-color"><?php generarIconPass(); ?>Cambiar contraseña</h6>
+                <h6 class="text-color"><?php generarIconPass();?>Cambiar contraseña</h6>
                 <div class="col d-grid gap-2">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Introduce la nueva contraseña">
@@ -139,7 +139,7 @@
                 </div>
             </div>
             <div class="row mt-1">
-                <h6 class="text-color"><?php generarIconFoto(); ?>Cambiar imagen del perfil</h6>
+                <h6 class="text-color"><?php generarIconFoto();?>Cambiar imagen del perfil</h6>
                 <div class="col d-grid gap-2">
                     <div class="input-group">
                         <input type="file" class="form-control">
