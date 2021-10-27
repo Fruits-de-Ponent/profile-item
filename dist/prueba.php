@@ -46,6 +46,7 @@
 
     <div class="collapse" id="colapsar-datos">
         <div class="container-fluid mt-3">
+        <hr>
             <h5 class="mx-1 text-color">DATOS</h5>
             <div class="row mx-1 rounded color text-light py-2 pt-3 justify-content-center text-center shadow">
                 <div class="col border-end border-light">
@@ -70,6 +71,7 @@
 
     <div class="collapse" id="colapsar-app">
         <div class="container-fluid mt-3">
+            <hr>
             <h5 class="mx-1 text-color">APP's</h5>
             <div class="row">
                 <div class="col d-grid gap-2">
@@ -98,6 +100,7 @@
 
     <div class="collapse" id="colapsar-config">
         <div class="container-fluid mt-3">
+            <hr>
             <h5 class="mx-1 text-color">CONFIGURACION</h5>
             <div class="row">
                 <div class="col d-grid gap-2">
@@ -115,8 +118,8 @@
                 <div class="col d-grid gap-2">
                     <h6 class="mx-1 text-color">Cambiar imagen del perfil</h6>
                     <div class="input-group">
-                        <input type="file" class="form-control" id="inputGroupFile02">
-                        <label class="input-group-text btn-color" for="inputGroupFile02">Cambiar imagen</label>
+                        <input type="file" class="form-control">
+                        <button class="btn btn-color" type="button">Cambiar</button>
                     </div>
                 </div>
             </div>
