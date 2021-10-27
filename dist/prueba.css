@@ -14,6 +14,10 @@ hr {
     color: var(--col);
 }
 
+#bienvenido {
+    cursor: default;
+}
+
 .color {
     background-color: var(--col) !important;
 }
@@ -34,6 +38,18 @@ hr {
     color: var(--col) !important;
 }
 
+.btn-color-invertido {
+    background-color: var(--bs-light) !important;
+    border: 1px solid var(--col);
+    color: var(--col) !important;
+}
+
+.btn-color-invertido:hover {
+    background-color: var(--col) !important;
+    border: 1px solid var(--col);
+    color: var(--bs-light) !important;
+}
+
 .text-color {
     color: var(--col) !important;
 }
@@ -44,6 +60,11 @@ hr {
 }
 
 .form-control:focus {
+    border-color: var(--col);
+    box-shadow: 0 0 0 0.25rem var(--col-tp);
+}
+
+.btn:focus {
     border-color: var(--col);
     box-shadow: 0 0 0 0.25rem var(--col-tp);
 }
