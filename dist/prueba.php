@@ -119,7 +119,7 @@
                 </div>
                 <?php if($_SESSION["Trabajador"]=='48251235H' ||$_SESSION["Trabajador"]=='43718221M'||$_SESSION["Trabajador"]=='47683324T'||$_SESSION["Trabajador"]=='25452518M') {?>
                 <div class="col d-grid">
-                    <a class="btn btn-color shadow" href=""><?php generarIconFormaciones();?>FORMACIONES</a>
+                    <a class="btn btn-color shadow" href="../../formacion/index.php"><?php generarIconFormaciones();?>FORMACIONES</a>
                 </div>
                 <div class="col d-grid">
                     <div class="btn-group">
@@ -160,6 +160,7 @@
                         <input type="text" class="form-control" placeholder="Introduce la nueva contraseña">
                     </div>
                     <div class="input-group mt-1 mb-2">
+                        <!-- url: 'updatepass.php' -->
                         <input type="text" class="form-control" placeholder="Vuelve a introducir la nueva contraseña">
                         <button class="btn btn-color" type="button" id="button-addon2">Cambiar contraseña</button>
                     </div>
@@ -169,8 +170,10 @@
                 <h6 class="text-color"><?php generarIconFoto();?>Cambiar imagen del perfil</h6>
                 <div class="col d-grid gap-2">
                     <div class="input-group">
-                        <input type="file" class="form-control">
-                        <button class="btn btn-color" type="button">Cambiar</button>
+                        <form method="POST" class="form-inline" action="guardarImg.php" enctype="multipart/form-data">
+                            <input type="file" name="img" class="form-control">
+                            <button class="btn btn-color" type="submit">Cambiar</button>
+                        </form>
                     </div>
                 </div>
             </div>

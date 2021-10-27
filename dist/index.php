@@ -33,7 +33,7 @@
         </div>
         <form method="POST" class="form-inline" action="guardarImg.php" enctype="multipart/form-data">
           <div class="mb-2" style="width: 260px;margin-top:10px; margin-left:15px;">
-          <input style="float: left; width: 250px;" class="form-control " type="file"name="img" required >
+          <input style="float: left; width: 250px;" class="form-control " type="file" name="img" required >
           </div>
           <input style="color: black;" class="" type="submit"  name="action" value="Actualizar"  />
         </form>
@@ -88,6 +88,7 @@
       }
     ?>
     <!-- al pulsar este boton se ejecuta un script con un pop up donde introduces la contraseña   -->
+
     <div class="med"></div>
     <button type="button"class="grey darken-3 waves-effect waves-light btn round-cc white-text" onclick="password()" > 
       Cambiar Contraseña
