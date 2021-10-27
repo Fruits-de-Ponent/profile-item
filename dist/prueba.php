@@ -3,6 +3,7 @@
     if(empty($_SESSION["nombre"])) {
         header('Location:  ../../vacaciones/index.html');
     }
+    include('./componentes/panel-lateral.php');
     include('./componentes/iconos.php');
     include('./componentes/salir.php');
 ?>
@@ -13,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
+    <link rel="icon" href="./imagenes/logo-200.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./prueba.css" rel="stylesheet">
 </head>
@@ -23,8 +25,7 @@
             <div>
                 <a type="button" 
                     data-bs-toggle="offcanvas" 
-                    data-bs-target="#offcanvasWithBackdrop" 
-                    aria-controls="offcanvasWithBackdrop">
+                    data-bs-target="#panel-lateral">
                     <?php generarIconPerfil(); ?>
                 </a>
                 <small id="bienvenido">Bienvenido, <?php echo $_SESSION["nombre"]; ?></small>
@@ -118,7 +119,7 @@
                 </div>
                 <?php if($_SESSION["Trabajador"]=='48251235H' ||$_SESSION["Trabajador"]=='43718221M'||$_SESSION["Trabajador"]=='47683324T'||$_SESSION["Trabajador"]=='25452518M') {?>
                 <div class="col d-grid">
-                    <a class="btn btn-color shadow" href="../../formacion/index.php"><?php generarIconFormaciones();?>FORMACIONES</a>
+                    <a class="btn btn-color shadow" href=""><?php generarIconFormaciones();?>FORMACIONES</a>
                 </div>
                 <div class="col d-grid">
                     <div class="btn-group">
@@ -176,6 +177,7 @@
     </div>
 
     <?php generarPopSalir(); ?>
+    <?php generarPanelLateral(); ?>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
