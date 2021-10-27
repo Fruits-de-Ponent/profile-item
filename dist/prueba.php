@@ -1,6 +1,10 @@
 <?php
-    include('./componentes/iconos.php');
     session_start();
+    if(empty($_SESSION["nombre"])) {
+        header('Location:  ../../vacaciones/index.html');
+    }
+    include('./componentes/iconos.php');
+    include('./componentes/salir.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +30,10 @@
                 <small id="bienvenido">Bienvenido, <?php echo $_SESSION["nombre"]; ?></small>
             </div>
             <div>
-                <a type="button">
-                    <?php generarIconLogOut(); ?>
+                <a type="button"
+                   data-bs-toggle="modal" 
+                   data-bs-target="#salir">
+                   <?php generarIconLogOut(); ?>
                 </a>
             </div>
         </div>
@@ -108,10 +114,11 @@
             <h5 class="mx-1 text-color"><b><?php generarIconCaja();?>APP's</b></h5>
             <div class="row">
                 <div class="col d-grid">
-                    <button class="btn btn-color shadow"><?php generarIconVacaciones();?>VACACIONES</button>
+                    <a class="btn btn-color shadow" href="../../vacaciones/Mostrarvacaciones.php"><?php generarIconVacaciones();?>VACACIONES</a>
                 </div>
+                <?php if($_SESSION["Trabajador"]=='48251235H' ||$_SESSION["Trabajador"]=='43718221M'||$_SESSION["Trabajador"]=='47683324T'||$_SESSION["Trabajador"]=='25452518M') {?>
                 <div class="col d-grid">
-                    <button class="btn btn-color shadow"><?php generarIconFormaciones();?>FORMACIONES</button>
+                    <a class="btn btn-color shadow" href="../../formacion/index.php"><?php generarIconFormaciones();?>FORMACIONES</a>
                 </div>
                 <div class="col d-grid">
                     <div class="btn-group">
@@ -123,12 +130,13 @@
                             aria-expanded="false">
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Actualizar trabajadores</a></li>
-                            <li><a class="dropdown-item" href="#">Dar de alta un trabajador</a></li>
-                            <li><a class="dropdown-item" href="#">Dar de baja un trabajador</a></li>
+                            <li><a class="dropdown-item" href="./cargarTrabajadores.php">Actualizar trabajadores</a></li>
+                            <li><a class="dropdown-item" href="../../vacaciones/alta_trabajador.php">Dar de alta un trabajador</a></li>
+                            <li><a class="dropdown-item" href="../../formacion/listado_trabajadores.php">Dar de baja un trabajador</a></li>
                         </ul>
                     </div>
                 </div>
+            <?php } ?>
             </div>
             <div class="row mt-1">
                 <div class="col d-grid gap-1">
@@ -166,6 +174,8 @@
             </div>
         </div>
     </div>
+
+    <?php generarPopSalir(); ?>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
