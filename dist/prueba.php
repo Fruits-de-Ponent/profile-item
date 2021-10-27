@@ -17,9 +17,13 @@
     <nav class="navbar color text-light sticky-top border-bottom border-light shadow-sm" id="navegador">
         <div class="container-fluid">
             <div>
-                <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">
+                <a type="button" 
+                    data-bs-toggle="offcanvas" 
+                    data-bs-target="#offcanvasWithBackdrop" 
+                    aria-controls="offcanvasWithBackdrop">
                     <?php generarIconPerfil(); ?>
                 </a>
+                <small id="bienvenido">Bienvenido, <?php echo $_SESSION["nombre"]; ?></small>
             </div>
             <div>
                 <a type="button">
@@ -110,7 +114,20 @@
                     <button class="btn btn-color shadow"><?php generarIconFormaciones();?>FORMACIONES</button>
                 </div>
                 <div class="col d-grid">
-                    <button class="btn btn-color shadow">GRÁFICO RENDIMIENTO</button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-color"><?php generarIconTrabajadores();?>TRABAJADORES</button>
+                        <button 
+                            type="button" 
+                            class="btn btn-color-invertido dropdown-toggle" 
+                            data-bs-toggle="dropdown" 
+                            aria-expanded="false">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Actualizar trabajadores</a></li>
+                            <li><a class="dropdown-item" href="#">Dar de alta un trabajador</a></li>
+                            <li><a class="dropdown-item" href="#">Dar de baja un trabajador</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="row mt-1">
