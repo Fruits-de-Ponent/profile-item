@@ -104,13 +104,13 @@
             <h5 class="mx-1 text-color"><b><?php generarIconCaja(); ?>APP's</b></h5>
             <div class="row">
                 <div class="col d-grid">
-                    <button class="btn btn-color shadow">VACACIONES</button>
+                    <button class="btn btn-color shadow"><?php generarIconVacaciones(); ?>VACACIONES</button>
                 </div>
                 <div class="col d-grid">
-                    <button class="btn btn-color shadow">FORMACIONES</button>
+                    <button class="btn btn-color shadow"><?php generarIconFormaciones(); ?>FORMACIONES</button>
                 </div>
                 <div class="col d-grid">
-                    <button class="btn btn-color shadow">GRAFICO RENDIMIENTO</button>
+                    <button class="btn btn-color shadow">GRÁFICO RENDIMIENTO</button>
                 </div>
             </div>
             <div class="row mt-1">
