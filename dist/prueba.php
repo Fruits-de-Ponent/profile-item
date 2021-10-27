@@ -126,9 +126,10 @@
                         <button type="button" class="btn btn-color"><?php generarIconTrabajadores();?>TRABAJADORES</button>
                         <button 
                             type="button" 
-                            class="btn btn-color-invertido dropdown-toggle" 
+                            class="btn-flecha"
                             data-bs-toggle="dropdown" 
                             aria-expanded="false">
+                            ▼
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="./cargarTrabajadores.php">Actualizar trabajadores</a></li>
