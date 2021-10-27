@@ -33,6 +33,11 @@
     color: var(--col) !important;
 }
 
+.card-color {
+    background-color: var(--col) !important;
+    color: var(--bs-light) !important;
+}
+
 #img-fondo {
     height: 600px;
     width: 100%;
