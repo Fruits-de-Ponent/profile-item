@@ -22,7 +22,7 @@
 </head>
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar color text-light sticky-top border-bottom border-light shadow-sm" id="navegador">
+    <nav class="navbar color text-light sticky-top border-bottom border-light shadow-sm-sm" id="navegador">
         <div class="container-fluid">
             <div>
                 <a type="button" 
@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col d-grid gap-2 mx-1">
                 <button 
-                    class="btn btn-color shadow" 
+                    class="btn btn-color shadow-sm" 
                     type="button" 
                     data-bs-toggle="collapse" 
                     data-bs-target="#colapsar-datos" 
@@ -59,7 +59,7 @@
             </div>
             <div class="col d-grid gap-2 mx-1">
                 <button 
-                    class="btn btn-color shadow" 
+                    class="btn btn-color shadow-sm" 
                     type="button" 
                     data-bs-toggle="collapse" 
                     data-bs-target="#colapsar-app" 
@@ -71,7 +71,7 @@
             </div>
             <div class="col d-grid gap-2 mx-1">
                 <button 
-                    class="btn btn-color shadow align-self-center" 
+                    class="btn btn-color shadow-sm align-self-center" 
                     type="button" 
                     data-bs-toggle="collapse" 
                     data-bs-target="#colapsar-config" 
@@ -89,7 +89,7 @@
         <div class="container-fluid mt-3">
         <hr>
             <h5 class="mx-1 text-color"><b><?php generarIconData(); ?>DATOS</b></h5>
-            <div class="row mx-1 rounded color text-light py-2 pt-3 justify-content-center text-center shadow">
+            <div class="row mx-1 rounded color text-light py-2 pt-3 justify-content-center text-center shadow-sm">
                 <div class="col border-end border-light">
                     <h5><b>Usuario</b></h5>
                     <h5><?php echo $_SESSION["nombre"].' '.$_SESSION["apellido"];?></h5>
@@ -117,15 +117,15 @@
             <h5 class="mx-1 text-color"><b><?php generarIconCaja();?>APP's</b></h5>
             <div class="row">
                 <div class="col d-grid">
-                    <a class="btn btn-color shadow" href="../../vacaciones/Mostrarvacaciones.php"><?php generarIconVacaciones();?>VACACIONES</a>
+                    <a class="btn btn-color shadow-sm" href="../../vacaciones/Mostrarvacaciones.php"><?php generarIconVacaciones();?>VACACIONES</a>
                 </div>
                 <?php if($_SESSION["Trabajador"]=='48251235H' ||$_SESSION["Trabajador"]=='43718221M'||$_SESSION["Trabajador"]=='47683324T'||$_SESSION["Trabajador"]=='25452518M') {?>
                 <div class="col d-grid">
-                    <a class="btn btn-color shadow" href="../../formacion/index.php"><?php generarIconFormaciones();?>FORMACIONES</a>
+                    <a class="btn btn-color shadow-sm" href="../../formacion/index.php"><?php generarIconFormaciones();?>FORMACIONES</a>
                 </div>
                 <div class="col d-grid">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-color"><?php generarIconTrabajadores();?>TRABAJADORES</button>
+                        <button type="button" class="btn btn-color shadow-sm"><?php generarIconTrabajadores();?>TRABAJADORES</button>
                         <button 
                             type="button" 
                             class="btn-flecha"
