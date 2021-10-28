@@ -3,6 +3,7 @@
 :root {
     --col: #f27428;
     --col-tp: #f27528a1;
+    --g: #c0c0c0e0;
     --b: var(--bs-light);
 }
 
@@ -46,9 +47,9 @@ hr {
 }
 
 .btn-flecha {
-    background-color: var(--col) !important;
+    background-color: var(--b) !important;
     border: 1px solid var(--col);
-    color: var(--b) !important;
+    color: var(--col) !important;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -56,7 +57,10 @@ hr {
 
 .btn-flecha:hover {
     background-color: var(--b) !important;
-    border: 1px solid var(--col);
+    border-top: 1px solid var(--col);
+    border-bottom: 1px solid var(--col);
+    border-right: 1px solid var(--col);
+    border-left: 1px solid transparent;
     color: var(--col) !important;
 }
 
@@ -91,24 +95,14 @@ hr {
     box-shadow: 0 0 0 0.25rem var(--col-tp);
 }
 
-#img-fondo {
-    height: 600px;
-    width: 100%;
-    background: url("https://www.fruitsponent.com/sites/default/files/images/2021-01/Sostenibilitat-home_0.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+.dropdown-item {
+    color: var(--col);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.dropdown-item:hover {
+    color: var(--b);
+    background-color: var(--col) !important;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
