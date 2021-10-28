@@ -152,11 +152,11 @@
             <div class="row">
                 <h6 class="text-color"><?php generarIconPass();?>Cambiar contraseña</h6>
                 <div class="col d-grid gap-2">
-                    <div class="input-group">
-                        <input type="password" class="form-control" placeholder="Introduce la nueva contraseña">
-                    </div>
-                    <form class="input-group mb-3" id="cambiarImagenForm" action="cambiar-password.php" method="POST">
-                        <input type="password" class="form-control" placeholder="Vuelve a introducir la nueva contraseña">
+                    <form class="input-group mb-3" id="cambiarPassForm" action="cambiar-password.php" method="POST">
+                        <div class="input-group mb-2">
+                            <input type="password" name="password-one" id="password-one" class="form-control" maxlength="50" placeholder="Introduce la nueva contraseña">
+                        </div>
+                        <input type="password" name="password-two" id="password-two" class="form-control" maxlength="50" placeholder="Vuelve a introducir la nueva contraseña">
                         <button class="btn btn-color" type="button" id="cambiarPassSubmit">Cambiar contraseña</button>
                     </form>
                 </div>
@@ -181,5 +181,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./scripts/validacion.js"></script>
 </body>
 </html>
