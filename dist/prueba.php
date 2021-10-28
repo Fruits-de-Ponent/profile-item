@@ -128,12 +128,12 @@
                         <button type="button" class="btn btn-color shadow-sm"><?php generarIconTrabajadores();?>TRABAJADORES</button>
                         <button 
                             type="button" 
-                            class="btn-flecha"
+                            class="btn-flecha shadow-sm"
                             data-bs-toggle="dropdown" 
                             aria-expanded="false">
                             ▼
                         </button>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu border-color">
                             <li><a class="dropdown-item" href="./cargarTrabajadores.php">Actualizar trabajadores</a></li>
                             <li><a class="dropdown-item" href="../../vacaciones/alta_trabajador.php">Dar de alta un trabajador</a></li>
                             <li><a class="dropdown-item" href="../../formacion/listado_trabajadores.php">Dar de baja un trabajador</a></li>
