@@ -147,7 +147,7 @@
 
     <!-- CONFIGURACIÓN -->
     <div class="collapse" id="colapsar-config">
-        <div class="container-fluid mt-3">
+        <div class="container-fluid my-3">
             <hr>
             <h5 class="text-color mb-3"><b><?php generarIconLlave();?>CONFIGURACIÓN</b></h5>
             <div class="row">
