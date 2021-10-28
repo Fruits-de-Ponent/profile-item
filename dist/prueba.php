@@ -117,7 +117,7 @@
                 <div class="col d-grid">
                     <a class="btn btn-color shadow" href="../../vacaciones/Mostrarvacaciones.php"><?php generarIconVacaciones();?>VACACIONES</a>
                 </div>
-                <?php if($_SESSION["Trabajador"]=='48251235H' ||$_SESSION["Trabajador"]=='43718221M'||$_SESSION["Trabajador"]=='47683324T'||$_SESSION["Trabajador"]=='25452518M') {?>
+                <?php if($_SESSION["Trabajador"]=='asdasd' ||$_SESSION["Trabajador"]=='43718221M'||$_SESSION["Trabajador"]=='47683324T'||$_SESSION["Trabajador"]=='25452518M') {?>
                 <div class="col d-grid">
                     <a class="btn btn-color shadow" href="../../formacion/index.php"><?php generarIconFormaciones();?>FORMACIONES</a>
                 </div>
@@ -152,29 +152,26 @@
     <div class="collapse" id="colapsar-config">
         <div class="container-fluid mt-3">
             <hr>
-            <h5 class="text-color"><b><?php generarIconLlave();?>CONFIGURACIÓN</b></h5>
+            <h5 class="text-color mb-3"><b><?php generarIconLlave();?>CONFIGURACIÓN</b></h5>
             <div class="row">
                 <h6 class="text-color"><?php generarIconPass();?>Cambiar contraseña</h6>
                 <div class="col d-grid gap-2">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Introduce la nueva contraseña">
+                        <input type="password" class="form-control" placeholder="Introduce la nueva contraseña">
                     </div>
-                    <div class="input-group mt-1 mb-2">
-                        <!-- url: 'updatepass.php' -->
-                        <input type="text" class="form-control" placeholder="Vuelve a introducir la nueva contraseña">
+                    <form class="input-group mb-3" action="cambiar-password.php" method="POST">
+                        <input type="password" class="form-control" placeholder="Vuelve a introducir la nueva contraseña">
                         <button class="btn btn-color" type="button" id="button-addon2">Cambiar contraseña</button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="row mt-1">
                 <h6 class="text-color"><?php generarIconFoto();?>Cambiar imagen del perfil</h6>
                 <div class="col d-grid gap-2">
-                    <div class="input-group">
-                        <form method="POST" class="form-inline" action="guardarImg.php" enctype="multipart/form-data">
-                            <input type="file" name="img" class="form-control">
-                            <button class="btn btn-color" type="submit">Cambiar</button>
-                        </form>
-                    </div>
+                    <form class="input-group" action="cambiar-imagen.php" enctype="multipart/form-data" method="POST">
+                        <input type="file" name="img" class="form-control">
+                        <button class="btn btn-color" type="button">Subir imagen de perfil</button>
+                    </form>
                 </div>
             </div>
         </div>
