@@ -5,7 +5,7 @@
             <button type="button" class="btn svg-fill" data-bs-dismiss="offcanvas" aria-label="Close"><?php generarIconCerrar();?></button>
         </div>
         <div class="offcanvas-body">
-            
+            <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
         </div>
     </div>
 <?php } ?>
