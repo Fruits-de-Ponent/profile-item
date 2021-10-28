@@ -153,12 +153,12 @@
             <div class="row">
                 <h6 class="text-color"><?php generarIconPass();?>Cambiar contraseña</h6>
                 <div class="col d-grid gap-2">
-                    <form class="input-group mb-3" id="cambiarPassForm" action="cambiar-password.php" method="POST">
+                    <form class="input-group mb-3" id="cambiarPassForm" action="./cambiar-password.php" method="POST">
                         <div class="input-group mb-2">
-                            <input type="password" name="password-one" id="password-one" class="form-control" maxlength="50" placeholder="Introduce la nueva contraseña">
+                            <input type="password" name="passwordOne" id="passwordOne" class="form-control" minlength="4" maxlength="50" placeholder="Introduce la nueva contraseña" required>
                         </div>
-                        <input type="password" name="password-two" id="password-two" class="form-control" maxlength="50" placeholder="Vuelve a introducir la nueva contraseña">
-                        <button class="btn btn-color" type="button" id="cambiarPassSubmit">Cambiar contraseña</button>
+                        <input type="password" name="passwordTwo" id="passwordTwo" class="form-control" minlength="4" maxlength="50" placeholder="Vuelve a introducir la nueva contraseña" required>
+                        <button class="btn btn-color" type="submit" id="cambiarPassSubmit">Cambiar contraseña</button>
                     </form>
                 </div>
             </div>
