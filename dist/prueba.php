@@ -155,18 +155,18 @@
                     <div class="input-group">
                         <input type="password" class="form-control" placeholder="Introduce la nueva contraseña">
                     </div>
-                    <form class="input-group mb-3" action="cambiar-password.php" method="POST">
+                    <form class="input-group mb-3" id="cambiarImagenForm" action="cambiar-password.php" method="POST">
                         <input type="password" class="form-control" placeholder="Vuelve a introducir la nueva contraseña">
-                        <button class="btn btn-color" type="button" id="button-addon2">Cambiar contraseña</button>
+                        <button class="btn btn-color" type="button" id="cambiarPassSubmit">Cambiar contraseña</button>
                     </form>
                 </div>
             </div>
             <div class="row mt-1">
                 <h6 class="text-color"><?php generarIconFoto();?>Cambiar imagen del perfil</h6>
                 <div class="col d-grid gap-2">
-                    <form class="input-group" action="cambiar-imagen.php" enctype="multipart/form-data" method="POST">
+                    <form class="input-group" id="cambiarImagenForm" action="cambiar-imagen.php" enctype="multipart/form-data" method="POST">
                         <input type="file" name="img" class="form-control">
-                        <button class="btn btn-color" type="button">Subir imagen de perfil</button>
+                        <button class="btn btn-color" type="button" id="cambiarImagenSubmit">Cambiar imagen</button>
                     </form>
                 </div>
             </div>
