@@ -117,7 +117,7 @@
                 <div class="col d-grid">
                     <a class="btn btn-color shadow" href="../../vacaciones/Mostrarvacaciones.php"><?php generarIconVacaciones();?>VACACIONES</a>
                 </div>
-                <?php if($_SESSION["Trabajador"]=='asdasd' ||$_SESSION["Trabajador"]=='43718221M'||$_SESSION["Trabajador"]=='47683324T'||$_SESSION["Trabajador"]=='25452518M') {?>
+                <?php if($_SESSION["Trabajador"]=='48251235H' ||$_SESSION["Trabajador"]=='43718221M'||$_SESSION["Trabajador"]=='47683324T'||$_SESSION["Trabajador"]=='25452518M') {?>
                 <div class="col d-grid">
                     <a class="btn btn-color shadow" href="../../formacion/index.php"><?php generarIconFormaciones();?>FORMACIONES</a>
                 </div>
