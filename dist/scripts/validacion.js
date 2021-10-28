@@ -1,7 +1,7 @@
-$('#cambiarPassSubmit').on('click', () => {
-    console.log('Click cambiar pass')
+$('#cambiarImgSubmit').on('click', () => {
+    console.log('Click cambiar img')
 })
 
-$('#cambiarImagenSubmit').on('click', () => {
+$('#cambiarPassSubmit').on('click', () => {
     console.log('Click cambiar pass')
 })

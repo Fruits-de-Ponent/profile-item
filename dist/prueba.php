@@ -17,7 +17,8 @@
     <title>Perfil</title>
     <link rel="icon" href="./imagenes/logo-200.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./prueba.css" rel="stylesheet">
+    <link href="./assets/css/prueba.css" rel="stylesheet">
+    <link href="./assets/css/scrollbar.css" rel="stylesheet">
 </head>
 <body>
     <!-- NAVBAR -->
