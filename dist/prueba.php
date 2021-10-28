@@ -4,6 +4,7 @@
         header('Location:  ../../vacaciones/index.html');
     }
     include('./componentes/panel-lateral.php');
+    include('./componentes/alertas.php');
     include('./componentes/iconos.php');
     include('./componentes/salir.php');
 ?>
@@ -86,7 +87,7 @@
     <div class="collapse" id="colapsar-datos">
         <div class="container-fluid mt-3">
         <hr>
-            <h5 class="mx-1 text-color"><b><?php generarIconData(); ?>DATOS<b></h5>
+            <h5 class="mx-1 text-color"><b><?php generarIconData(); ?>DATOS</b></h5>
             <div class="row mx-1 rounded color text-light py-2 pt-3 justify-content-center text-center shadow">
                 <div class="col border-end border-light">
                     <h5><b>Usuario</b></h5>
@@ -176,9 +177,12 @@
             </div>
         </div>
     </div>
+</div>
+
 
     <?php generarPopSalir(); ?>
     <?php generarPanelLateral(); ?>
+    <?php generarAlerta('asd'); ?>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
