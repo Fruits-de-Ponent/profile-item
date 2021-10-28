@@ -141,11 +141,6 @@
                 </div>
             <?php } ?>
             </div>
-            <div class="row mt-1">
-                <div class="col d-grid gap-1">
-                    <button class="btn btn-color shadow">TEST</button>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -179,12 +174,12 @@
     </div>
 </div>
 
-
     <?php generarPopSalir(); ?>
     <?php generarPanelLateral(); ?>
-    <?php generarAlerta('asd'); ?>
+    <?php generarAlerta(); ?>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
