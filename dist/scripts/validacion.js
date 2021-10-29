@@ -1,24 +1,27 @@
 let campana = $('#alerta-texto').html()
 let params = (new URL(document.location)).searchParams;
-params = params.get("pass");
+params = params.get("data");
 window.history.pushState({}, document.title, "/profile-item/dist/prueba.php");
 
-if (params === 'actualizada') {
-    alerta('Contraseña cambiada correctamente');
-};
+if (params === 'passok') {
+    alerta('¡Contraseña cambiada correctamente!');
+} else if (params === 'imgok') {
+    alerta('¡Imagen cambiada correctamente!');
+}
 
 $('#cambiarImagenSubmit').on('click', (e) => {
     e.preventDefault();
-    console.log(validateSize($('#archivoImg')), validateFormat($('#archivoImg').val()));
-    if (validateFormat($('#archivoImg').val()) === true) {
-        if (validateSize($('#archivoImg')) === true) {
-            $('#cambiarImagenForm').submit();
-        } else {
-            alerta('La imagen mide demasiado. Medida máxima: 300px * 300px');
-        }
+    if (validarExtension($('#archivoImg').val()) === true) {
+        validarDimensiones($('#archivoImg')).then(resultado => { 
+            if (resultado) {
+                $('#cambiarImagenForm').submit();
+            } else {
+                alerta('La dimension es incorrecta. (300px * 300px)');
+            }
+        });
     } else {
-        alerta('La extension del archivo es incorrecta');
-    };
+        alerta('El archivo que intentas subir no es una imagen.');
+    }
 });
 
 $('#cambiarPassSubmit').on('click', (e) => {
@@ -42,7 +45,7 @@ function alerta(texto) {
     });
 };
 
-function validateFormat(file) {
+function validarExtension(file) {
     var ext = file.split(".");
     ext = ext[ext.length-1].toLowerCase();      
     var arrayExtensions = ["jpg" , "jpeg", "png", "bmp"];
@@ -54,24 +57,23 @@ function validateFormat(file) {
     };
 };
 
-async function validateSize() {
-    let subir;
-    var _URL = window.URL || window.webkitURL;
-    var element = $("#archivoImg");
-        var file, img;
-        if ((file = element[0].files[0])) {
-            img = new Image();
-            img.onload = async () => {
-                await this.height;
-                await this.width
-                if(this.width > 300 || this.height > 300) {
-                    subir = false;
-                } else {
-                    subir = true;
-                };
-            };
-            img.src = _URL.createObjectURL(file);
-            await img.decode();
-            return subir;
-    };
-};
+async function validarDimensiones(file) {
+    const fileAsDataURL = window.URL.createObjectURL(file[0].files[0])
+    const dimensions = await getHeightAndWidthFromDataUrl(fileAsDataURL);
+    if (dimensions.height < 301 || dimensions.width < 301) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+const getHeightAndWidthFromDataUrl = dataURL => new Promise(resolve => {
+    const img = new Image()
+    img.onload = () => {
+      resolve({
+        height: img.height,
+        width: img.width
+      })
+    }
+    img.src = dataURL
+})
