@@ -28,8 +28,10 @@
                 <a type="button" 
                     data-bs-toggle="offcanvas" 
                     data-bs-target="#panel-lateral">
-                    <img width="30" class="img-fluid my-1" id="imagen-perfil" src="data:image/jpg;base64,<?php echo base64_encode($_SESSION['img']);?> "/>
+                    <?php generarIconPanelLateral(); ?>
                 </a>
+                
+                <img width="30" class="img-fluid my-1" id="imagen-perfil" src="data:image/jpg;base64,<?php echo base64_encode($_SESSION['img']);?> "/>
                 <small id="bienvenido">Bienvenido, <?php echo $_SESSION["nombre"]; ?></small>
             </div>
             <div>
