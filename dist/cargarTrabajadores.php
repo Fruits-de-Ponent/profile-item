@@ -1,15 +1,3 @@
-<!-- LOS ERRORES DE ESTE ARCHIVO NO SUPONEN UN PROBLEMA -->
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formacion reglada</title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.css">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-</head>
-</html>
 <?php
 require_once 'database.php';
 // le damos el valor a la variable de una consulta para enviarla a la funcion
@@ -113,17 +101,7 @@ function Desactivar($con){
         echo("Error!");  
     } 
 }
-function update(){
-    ?>
-        <script> swal.fire({
-            icon: 'success',
-            title: 'Trabajadores actualizados!',
-            type: 'succes',
-        }).then(function() {
-            window.location = "index.php"; 
-        });</script><?php
-}
+    function update() {
+        header('Location: ./index.php?data=updateok');
+    };
 ?>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
