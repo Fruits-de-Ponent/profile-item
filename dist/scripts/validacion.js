@@ -1,7 +1,7 @@
 let campana = $('#alerta-texto').html()
 let params = (new URL(document.location)).searchParams;
 params = params.get("data");
-window.history.pushState({}, document.title, "/profile-item/dist/prueba.php");
+window.history.pushState({}, document.title, "/profile-item/dist/index.php");
 
 if (params === 'passok') {
     alerta('¡Contraseña cambiada correctamente!');
