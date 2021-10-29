@@ -44,7 +44,7 @@
         </div>
     </nav>
     <!-- PANEL DE CONTROL -->
-    <div class="container-fluid mt-3">
+    <div class="container-fluid mt-3" id="panel-de-control">
         <h5 class="mx-1 text-color"><b><?php generarIconPanel(); ?>PANEL DE CONTROL</b></h5>
         <div class="row">
             <div class="col d-grid gap-2">
@@ -186,5 +186,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./scripts/validacion.js"></script>
 <script src="./scripts/parametros.js"></script>
+<script src="./scripts/animacion.js"></script>
 </body>
 </html>
