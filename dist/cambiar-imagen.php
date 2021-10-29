@@ -13,5 +13,5 @@
             $_SESSION['img'] = $mostrar2['Imagen'];
         }
     }
-    header('Location: ./prueba.php?data=imgok')
+    header('Location: ./index.php?data=imgok')
 ?>
