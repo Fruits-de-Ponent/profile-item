@@ -45,7 +45,7 @@
     <div class="container-fluid mt-3">
         <h5 class="mx-1 text-color"><b><?php generarIconPanel(); ?>PANEL DE CONTROL</b></h5>
         <div class="row">
-            <div class="col d-grid gap-2 mx-1">
+            <div class="col d-grid gap-2">
                 <button 
                     class="btn btn-color shadow-sm" 
                     type="button" 
@@ -57,7 +57,7 @@
                     DATOS
                 </button>
             </div>
-            <div class="col d-grid gap-2 mx-1">
+            <div class="col d-grid gap-2">
                 <button 
                     class="btn btn-color shadow-sm" 
                     type="button" 
@@ -69,7 +69,7 @@
                     APP's
                 </button>
             </div>
-            <div class="col d-grid gap-2 mx-1">
+            <div class="col d-grid gap-2">
                 <button 
                     class="btn btn-color shadow-sm align-self-center" 
                     type="button" 
