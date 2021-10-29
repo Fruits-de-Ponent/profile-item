@@ -7,6 +7,8 @@ if (params === 'passok') {
     alerta('¡Contraseña cambiada correctamente!');
 } else if (params === 'imgok') {
     alerta('¡Imagen cambiada correctamente!');
+} else if (params === 'updateok') {
+    alerta('¡Los trabajadores se han actualizado!');
 }
 
 $('#cambiarImagenSubmit').on('click', (e) => {
