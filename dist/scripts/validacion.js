@@ -5,7 +5,7 @@ $('#cambiarImagenSubmit').on('click', (e) => {
             if (resultado) {
                 $('#cambiarImagenForm').submit();
             } else {
-                alerta('La dimension es incorrecta. (300px * 300px)');
+                alerta('La dimension es incorrecta. <br> <small>Dimensión máxima permitida: 300px * 300px</small>');
             }
         });
     } else {
