@@ -9,7 +9,6 @@ if (params === 'actualizada') {
 
 $('#cambiarImagenSubmit').on('click', () => {
     if (validateFormat($('#archivoImg').val()) || validateSize($('#archivoImg'))) {
-        console.log('asd')
         $('#cambiarImagenForm').submit();
     }
 })
@@ -44,7 +43,6 @@ function validateSize() {
             img = new Image();
             img.onload = function() {
                 if(this.width > 300 || this.height > 300) {
-                    console.log(this.width, this.height)
                     alerta('La imagen mide demasiado. Medida máxima: 150px * 150px')
                     subir = false;
                 } else {
@@ -52,7 +50,6 @@ function validateSize() {
                 }
             };
             img.src = _URL.createObjectURL(file);
-            console.log('asdasasdd', true)
             return subir;
     }
 }
