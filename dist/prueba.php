@@ -17,8 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/img/logo-200.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./assets/css/prueba.css" rel="stylesheet">
     <link href="./assets/css/scrollbar.css" rel="stylesheet">
+    <link href="./assets/css/prueba.css" rel="stylesheet">
+
 </head>
 <body>
     <!-- NAVBAR -->
@@ -28,7 +29,7 @@
                 <a type="button" 
                     data-bs-toggle="offcanvas" 
                     data-bs-target="#panel-lateral">
-                    <img width="25" class="img-fluid my-1" src="data:image/jpg;base64,<?php echo base64_encode($_SESSION['img']);?> "/>
+                    <img width="30" class="img-fluid my-1" id="imagen-perfil" src="data:image/jpg;base64,<?php echo base64_encode($_SESSION['img']);?> "/>
                 </a>
                 <small id="bienvenido">Bienvenido, <?php echo $_SESSION["nombre"]; ?></small>
             </div>
