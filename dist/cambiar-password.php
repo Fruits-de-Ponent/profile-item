@@ -5,5 +5,5 @@
     $nuevaPass = $_POST['passwordOne'];
     echo $trabajador, $nuevaPass;
     mysqli_query($con, "UPDATE `login` SET `Password`='$nuevaPass' WHERE DNI='$trabajador'");
-    header('Location: ./prueba.php?pass=actualizada');
+    header('Location: ./prueba.php?data=passok');
 ?>
