@@ -116,3 +116,10 @@ hr {
 #alert-password {
     background-color: var(--b);
 }
+
+
+@media only screen and (max-width:370.19px) {
+    .col {
+        margin-top: 0.25rem;
+    }
+}
