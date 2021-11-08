@@ -30,7 +30,6 @@
                     data-bs-target="#panel-lateral">
                     <?php generarIconPanelLateral(); ?>
                 </a>
-                
                 <img width="30" class="img-fluid my-1" id="imagen-perfil" src="data:image/jpg;base64,<?php echo base64_encode($_SESSION['img']);?> "/>
                 <small id="bienvenido">Bienvenido, <?php echo $_SESSION["nombre"]; ?></small>
             </div>
@@ -168,7 +167,7 @@
                 <h6 class="text-color"><?php generarIconFoto();?>Cambiar imagen del perfil</h6>
                 <div class="col d-grid gap-2">
                     <form class="input-group" id="cambiarImagenForm" action="cambiar-imagen.php" enctype="multipart/form-data" method="POST">
-                        <input type="file" id="archivoImg" name="img" class="form-control">
+                        <input type="file" id="archivoImg" accept="image/png, image/bmp, image/jpeg, image/jpg" name="img" class="form-control">
                         <button class="btn btn-color" type="button" id="cambiarImagenSubmit">Cambiar imagen</button>
                     </form>
                 </div>
